@@ -1,1 +1,6 @@
+/* Any style file imported on this css file will be available throughout the application to every component */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
 /* You can add global styles to this file, and also import other style files */

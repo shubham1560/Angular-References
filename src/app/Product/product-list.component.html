@@ -1,0 +1,28 @@
+ {{title}}
+<br><br>
+<div class="row">
+    Filter By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" (keyup)='key()' [(ngModel)]='filter'> {{filter}}
+</div>
+<br>
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <button class="btn btn-primary" (click)='toggleImage()'>{{imageShow? "Hide": "Show"}} Image</button>
+                </th>
+
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td> <img *ngIf="imageShow" [src]='employee.img' [style.width.px]='imageWidth' [style.margin.px]='imageMargin' [title]='employee.name'> </td>
+                <td>{{employee.id | currency: "INR" :"symbol": "1.0-2"}}</td>
+                <td>{{employee.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
