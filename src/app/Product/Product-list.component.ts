@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IEmployee } from './product';
 
 @Component({
     selector: 'product-list',
@@ -23,7 +24,7 @@ export class ProductListComponent {
         console.log("keyup");
     }
 
-    employees: any[] = [
+    employees: IEmployee[] = [
         {
             id: 3149750,
             name: "Shubham Sinha",

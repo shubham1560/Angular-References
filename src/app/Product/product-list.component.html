@@ -2,6 +2,8 @@
 <br><br>
 <div class="row">
     Filter By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- Two way binding [(ngModel)]='filter'-->
     <input type="text" (keyup)='key()' [(ngModel)]='filter'> {{filter}}
 </div>
 <br>
@@ -10,6 +12,8 @@
         <thead>
             <tr>
                 <th scope="col">
+
+                    <!-- Event binding (click)='toggleImage()' -->
                     <button class="btn btn-primary" (click)='toggleImage()'>{{imageShow? "Hide": "Show"}} Image</button>
                 </th>
 
@@ -19,8 +23,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let employee of employees">
+
+                <!-- Property binding [src] = 'employee.img' -->
                 <td> <img *ngIf="imageShow" [src]='employee.img' [style.width.px]='imageWidth' [style.margin.px]='imageMargin' [title]='employee.name'> </td>
                 <td>{{employee.id | currency: "INR" :"symbol": "1.0-2"}}</td>
+
+                <!-- Interpolation {{employee.name }} -->
                 <td>{{employee.name }}</td>
             </tr>
         </tbody>
