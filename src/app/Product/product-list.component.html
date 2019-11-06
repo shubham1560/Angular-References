@@ -27,10 +27,10 @@
 
                 <!-- Property binding [src] = 'employee.img' -->
                 <td> <img *ngIf="imageShow" [src]='employee.img' [style.width.px]='imageWidth' [style.margin.px]='imageMargin' [title]='employee.name'> </td>
-                <td>{{employee.id | currency: "INR" :"symbol": "1.0-2"}}</td>
+                <td style="margin: auto;">{{employee.id | currency: "INR" :"symbol": "1.0-2"}}</td>
 
                 <!-- Interpolation {{employee.name }} -->
-                <td>{{employee.name }}</td>
+                <td>{{employee.name | convertToSpaces:"-" }}</td>
             </tr>
         </tbody>
     </table>

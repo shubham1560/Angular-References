@@ -8,17 +8,19 @@ import { FormsModule } from '@angular/forms';
 
 //Every component has to be added in parent to get the directive to be used
 import { ProductListComponent } from '././Product/Product-list.component'
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
