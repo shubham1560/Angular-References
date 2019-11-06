@@ -4,7 +4,9 @@
     Filter By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <!-- Two way binding [(ngModel)]='filter'-->
-    <input type="text" (keyup)='key()' [(ngModel)]='filter'> {{filter}}
+    <input type="text" [(ngModel)]='listFilter'> {{listFilter}}
+    <!-- <input type="text" [(ngModel)]='_listfilter'> {{filter}} -->
+
 </div>
 <br>
 <div class="row">
@@ -23,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of employees">
+            <tr *ngFor="let employee of filteredEmployees">
 
                 <!-- Property binding [src] = 'employee.img' -->
                 <td> <img *ngIf="imageShow" [src]='employee.img' [style.width.px]='imageWidth' [style.margin.px]='imageMargin' [title]='employee.name'> </td>
