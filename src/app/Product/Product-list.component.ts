@@ -58,13 +58,15 @@ export class ProductListComponent implements OnInit {
             id: 3149750,
             name: "Shubham Sinha",
             company: "Nagarro",
-            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            star: 4,
         },
         {
             id: 3149749,
             name: "Arun Singh",
             company: "Nagarro",
-            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+            star: 3,
         }
     ]
 

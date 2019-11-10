@@ -7,10 +7,15 @@ import { OnChanges, Component, Input } from '@angular/core';
 
 export class StarComponent implements OnChanges { 
     
-    @Input() rating: number = 4;
+    @Input() rating: number;
     starWidth: number = 5;
     
     ngOnChanges(): void {
-        this.starWidth = this.rating*75/5
+        (this.rating)
+    }
+
+    notify(num) { 
+        console.log("Clicked the fun! " + num);
+        this.rating = num;
     }
 }
