@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 //Every component has to be added in parent to get the directive to be used
 import { ProductListComponent } from '././Product/Product-list.component'
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent} from './shared/star.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
