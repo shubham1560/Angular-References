@@ -35,7 +35,7 @@
                 <!-- Interpolation {{employee.name }} -->
                 <td>{{employee.name | convertToSpaces:"-" }}</td>
                 <td>
-                    <pm-star></pm-star>
+                    <pm-star [rating]='employee.star'></pm-star>
                 </td>
             </tr>
         </tbody>

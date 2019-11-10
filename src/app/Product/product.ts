@@ -3,4 +3,5 @@ export interface IEmployee {
     name: string;
     company: string;
     img: string;
+    star: number;
 }
