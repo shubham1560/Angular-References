@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IEmployee } from './product';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, range } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, range, throwError } from 'rxjs';
+import { map, filter, tap, catchError } from 'rxjs/operators';
 
 
 @Injectable()
@@ -22,10 +22,17 @@ export class ProductService{
       ) { }
     
     getArticles(): Observable<IEmployee> { 
-        console.log("Service called");
-        return this.httpClient.get<IEmployee>("http://localhost:8000/api/knowledge/", {headers: this.headers}) ;
-      }
+        return this.httpClient.get<IEmployee>("http://localhost:8000/api/knowledge/", { headers: this.headers }).pipe(
+            tap(data => console.log(data)),
+            catchError(this.handleError)
+            );
+    }
     
+    private handleError(err: HttpErrorResponse) { 
+        let errorMessage = "chu";
+        return throwError(err)
+    }
+        
     getEmployees(): IEmployee[]{ 
         return [
             {
