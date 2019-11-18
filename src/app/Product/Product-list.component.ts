@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './product';
+import { ProductService } from './product.service';
 
 // import {}
 
@@ -15,11 +16,21 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     filter: string = "cart";
-    
+    employees: IEmployee[];
+    filteredEmployees: IEmployee[] = [];
     imageShow:boolean = true;
+    articles;
 
     ngOnInit(): void { 
-        console.log("implementation");
+        this.employees = this.employeeService.getEmployees();
+        this.filteredEmployees = this.employees;
+        this.articles = this.employeeService.getArticles().subscribe(
+            data => { 
+                console.log(data);
+            }
+        );
+        console.log(this.articles);
+        // console.log("implementation");
     }
 
     toggleImage = function toggle():void { 
@@ -42,8 +53,7 @@ export class ProductListComponent implements OnInit {
     }
 
 
-    constructor() { 
-        this.filteredEmployees = this.employees;
+    constructor(private employeeService : ProductService) { 
         this.listFilter = '';
     }
 
@@ -51,24 +61,24 @@ export class ProductListComponent implements OnInit {
         console.log(this.listFilter);
     }
 
-    filteredEmployees: IEmployee[] = [];
+    
 
-    employees: IEmployee[] = [
-        {
-            id: 3149750,
-            name: "Shubham Sinha",
-            company: "Nagarro",
-            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
-            star: 4,
-        },
-        {
-            id: 3149749,
-            name: "Arun Singh",
-            company: "Nagarro",
-            img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
-            star: 3,
-        }
-    ]
+    // employees: IEmployee[] = [
+    //     {
+    //         id: 3149750,
+    //         name: "Shubham Sinha",
+    //         company: "Nagarro",
+    //         img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+    //         star: 4,
+    //     },
+    //     {
+    //         id: 3149749,
+    //         name: "Arun Singh",
+    //         company: "Nagarro",
+    //         img: "https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png",
+    //         star: 3,
+    //     }
+    // ]
 
 
     // performFilter(filterBy: string): IEmployee {
