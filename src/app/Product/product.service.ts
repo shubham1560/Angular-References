@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
 import { IEmployee } from './product';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, range } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 
 @Injectable()
 export class ProductService{
 
+
+    headers = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+        //   Authorization: `Token ${this.token}`,
+          
+        }
+      );
     constructor(
         private httpClient: HttpClient,
       ) { }
     
-    getArticles() { 
+    getArticles(): Observable<IEmployee> { 
         console.log("Service called");
-        return this.httpClient.get("http://localhost:8000/api/knowledge/") ;
+        return this.httpClient.get<IEmployee>("http://localhost:8000/api/knowledge/", {headers: this.headers}) ;
       }
     
     getEmployees(): IEmployee[]{ 

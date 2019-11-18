@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './product';
 import { ProductService } from './product.service';
+import { Observable, range } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 // import {}
 
