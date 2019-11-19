@@ -13,7 +13,8 @@ import { StarComponent} from './shared/star.component'
 import { ProductService } from './Product/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './Product/product-detail.component';
-
+import { RouterModule, Router } from '@angular/router';
+import { WelcomeComponent } from './Product/welcome.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,21 @@ import { ProductDetailComponent } from './Product/product-detail.component';
     ConvertToSpacesPipe,
     StarComponent,
     ProductDetailComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot([
+      {path: 'products', component: ProductListComponent},
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+      
+      
+    ])
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
