@@ -29,7 +29,7 @@ export class ProductListComponent implements OnInit {
                 console.log(data);
             }
         );
-        console.log(this.articles);
+        // console.log(this.articles);
         // console.log("implementation");
     }
 
@@ -42,7 +42,7 @@ export class ProductListComponent implements OnInit {
     _listfilter: string;
 
     get listFilter(): string { 
-        console.log(this._listfilter)
+        // console.log(this._listfilter)
         return this._listfilter;
     }
 

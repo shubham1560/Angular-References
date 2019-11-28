@@ -12,7 +12,7 @@ export class ProductService{
     headers = new HttpHeaders(
         {
           'Content-Type': 'application/json',
-          //Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+            Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
         //   Authorization: `Token ${this.token}`,
           
         }
