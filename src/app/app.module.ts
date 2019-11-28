@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './Product/product-detail.component';
 import { RouterModule, Router } from '@angular/router';
 import { WelcomeComponent } from './Product/welcome.component';
+import { FraudarticlesComponent } from './Product/fraudarticles.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { WelcomeComponent } from './Product/welcome.component';
     StarComponent,
     ProductDetailComponent,
     WelcomeComponent,
+    FraudarticlesComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,12 +33,11 @@ import { WelcomeComponent } from './Product/welcome.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: 'products', component: ProductListComponent},
+      { path: 'products', component: ProductListComponent },
+      { path: 'articles', component: FraudarticlesComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
-      
-      
     ])
   ],
   providers: [ProductService],
