@@ -12,7 +12,7 @@ export class ProductService{
     headers = new HttpHeaders(
         {
           'Content-Type': 'application/json',
-          Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
+          //Authorization: 'Token 961414ea9cd103f1722cc82c831866f938dd0e67',
         //   Authorization: `Token ${this.token}`,
           
         }
@@ -23,7 +23,7 @@ export class ProductService{
     
     getArticles(): Observable<IEmployee> { 
         return this.httpClient.get<IEmployee>("http://localhost:8000/api/knowledge/", { headers: this.headers }).pipe(
-            tap(data => console.log(data)),
+            tap(data => console.table(data)),
             catchError(this.handleError)
             );
     }

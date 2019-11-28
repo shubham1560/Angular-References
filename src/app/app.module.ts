@@ -34,7 +34,7 @@ import { FraudarticlesComponent } from './Product/fraudarticles.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'articles', component: FraudarticlesComponent},
+      { path: 'articles', component: FraudarticlesComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
