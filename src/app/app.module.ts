@@ -36,7 +36,7 @@ import { FraudarticlesComponent } from './Product/fraudarticles.component';
       { path: 'products', component: ProductListComponent },
       { path: 'articles', component: FraudarticlesComponent },
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id/:name', component: ProductDetailComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     ])
